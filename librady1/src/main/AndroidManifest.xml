@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.librady1">
+
+    <application
+        android:label="wxy"
+        android:allowBackup="false"
+        >
+        <meta-data
+            android:value="10"
+            android:name="com.wxy.demo"/>
+        <activity android:name=".Demo2Activity" android:windowSoftInputMode="stateUnchanged">
+            <meta-data android:name="cow"
+                android:value="1"/>
+            <meta-data android:name="duck"
+                android:value="2"/>
+        </activity>
+    </application>
+</manifest>

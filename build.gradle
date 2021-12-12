@@ -1,0 +1,57 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+def skipHello=true;
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.0.3"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+tasks.register("hello") {
+    dependsOn("dependOn")
+    doLast {
+        println("Hello world!")
+    }
+}
+
+tasks.register("dependOn"){
+    doLast{
+        println("Hello world!")
+    }
+}
+task taks2{
+    doLast{
+        println("Hello world2222222")
+    }
+}
+task taks3{
+    doLast{
+        println("Hello world3333333333")
+    }
+}
+
+taks2{
+    mustRunAfter(taks3)
+}
+
+task task5{
+    doLast{
+        println "hello world"
+    }
+}
+
+task5.onlyIf { project.hasProperty("skipHello")}
+
+
